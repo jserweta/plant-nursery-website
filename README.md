@@ -2,16 +2,16 @@
 
 Theme developed by JSerweta. Come say hi: https://jakubserweta.pl/.
 
-Check out demo page [HERE]:http://kiwwwi.imenet.pl/
-## Screenshot:
+Check out demo page [**HERE**](http://kiwwwi.imenet.pl/)
+## Screenshots
 ### Home page
 
-![Screenshot](https://github.com/jserweta/plant-nursery-website/blob/main/img/home-page.png)
+<img src="https://github.com/jserweta/plant-nursery-website/blob/main/img/home-page.png" width="50%" >
 
 ### Offer page
 
-![Screenshot](https://github.com/jserweta/plant-nursery-website/blob/main/img/offer-page.png)
+<img src="https://github.com/jserweta/plant-nursery-website/blob/main/img/offer-page.png" width="50%" >
 
 ### Product page
 
-![Screenshot](https://github.com/jserweta/plant-nursery-website/blob/main/img/product-page.png)
+<img src="https://github.com/jserweta/plant-nursery-website/blob/main/img/product-page.png" width="50%" >
