@@ -1,7 +1,4 @@
 # Plant nursery WordPress theme
-
-Theme developed by JSerweta. Come say hi: https://jakubserweta.pl/.
-
 Check out demo page [**HERE**](http://kiwwwi.imenet.pl/)
 ## Screenshots
 ### Home page
