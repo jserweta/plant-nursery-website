@@ -1,0 +1,313 @@
+// ------------------------------------------------------------
+// Forms and input fields
+//
+// All the forms on the site. General styles. Supports most of
+// the Gravity Forms styles out of the box.
+// ------------------------------------------------------------
+
+// Variables
+//$border-radius: 3px;
+$border-width: 2px;
+$button-font-weight: 700;
+$background-inputs: $color-white;
+
+// CSS Variables for radios and checkboxes
+:root {
+  --space-unit: 1em;
+  --space-x-small: calc(.125 * var(--space-unit));
+  --space-small: calc(.25 * var(--space-unit));
+  --checkbox-radio-size: 16px;
+  --checkbox-radio-gap: calc(.5 * var(--space-unit));
+  --checkbox-radio-border-width: 2px;
+  --checkbox-radio-line-height: var(--body-line-height);
+  --radio-marker-size: 8px;
+  --checkbox-marker-size: 12px;
+  --checkbox-radius: 4px;
+}
+
+// Buttons
+.button-wrapper {
+  margin-bottom: 0;
+}
+
+// Buttons
+.content-area,
+.site-footer {
+  button,
+  .button,
+  .button-green-border
+  input[type="reset"],
+  input[type="submit"],
+  input[type="button"] {
+    font-size: var(--font-size-small);
+   
+    width: auto;
+    display: inline-block;
+    
+    margin-bottom: 0;
+    text-decoration: none;
+    // position: relative;
+    cursor: pointer;
+    
+    line-height: 1;
+    appearance: none;
+    border-radius: $border-radius;
+    display: block;
+    color:$color-white;
+    background-color: $color-main;
+    width: 180px;
+    height: fit-content;
+    padding:17px 10px;
+    border:2px solid $color-main;
+    text-align: center;
+    font-weight: $font-weight-medium;
+    transition: $transition-duration linear background;
+
+    @media(min-width:$container-ipad){
+        width: 200px;
+        padding: 17px;
+    }
+
+    // Button styles
+    &.button-grey {
+      color: $color-black;
+      background: $color-lightgrey;
+
+      &:hover {
+        background: $color-hover;
+      }
+    }
+
+    &.button-ghost {
+      background-color: transparent;
+      border: $border-width solid $color-links;
+      color: $color-links;
+    }
+
+    // Button sizes
+    &.button-small {
+      font-size: var(--font-size-small);
+      padding-top: 12px;
+      padding-bottom: 12px;
+      padding-left: 25px;
+      padding-right: 25px;
+    }
+
+    &.button-medium {
+      font-size: var(--font-size-medium);
+      padding-top: 19px;
+      padding-bottom: 19px;
+      padding-left: 40px;
+      padding-right: 40px;
+    }
+
+    &.button-large {
+      font-size: var(--font-size-large);
+      padding: 14px 27px 16px;
+    }
+
+    &.button-action {
+      font-size: var(--font-size-small);
+      padding-top: 14px;
+      padding-bottom: 14px;
+      padding-left: 25px;
+      padding-right: 25px;
+    }
+
+    &:hover,
+    &:focus {
+      background-color: $color-white;
+      color: $color-main;
+      border: 2px solid $color-main;
+    }
+  }
+}
+
+// Select drop downs
+select {
+  border-radius: 0;
+  background-image: url('../svg/select.svg');
+  background-repeat: no-repeat;
+  background-position: right 0 center;
+  background-size: 40px auto;
+  transition: none;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  text-indent: 1px;
+  border: $border-width solid $color-border-forms;
+  color: $color-paragraphs;
+  padding: 15px;
+  line-height: 24px;
+  font-size: var(--font-size-medium);
+
+  &::-ms-expand {
+    display: none;
+  }
+}
+
+// Form input elements and textareas
+textarea,
+select,
+input[type="text"],
+input[type="tel"],
+input[type="url"],
+input[type="password"],
+input[type="number"],
+input[type="month"],
+input[type="week"],
+input[type="email"],
+input[type="search"] {
+  @extend %default;
+  
+  font-family: $font-paragraphs;
+  background: $background-inputs;
+  border:none;
+  width: 100%;
+  border-bottom: solid $border-width $color-border-forms;
+  padding: 15px;
+  line-height: 24px;
+  transition: background .55s;
+  text-decoration: none;
+  position: relative;
+  appearance: none;
+  margin-bottom: 0;
+  box-sizing: border-box;
+  font-size: var(--font-size-medium);
+
+  &::placeholder {
+    color: $color-paragraphs;
+    opacity: .4;
+  }
+  &:active{
+    border:none;
+  }
+
+  &:focus {
+    background: $background-inputs;
+    border-bottom: $border-width solid darken(#d9d9d9, 12%);
+    outline: none !important;
+
+    &::placeholder {
+      color: $color-black;
+      opacity: .8;
+    }
+  }
+}
+textarea{
+  max-height: 200px;
+  margin-bottom: 15px;
+}
+
+select:focus {
+  background: $background-inputs;
+  border: $border-width solid darken(#d9d9d9, 12%);
+}
+
+// Radio buttons and checkboxes
+// input[type="radio"],
+// input[type="checkbox"] {
+//   // Hide native buttons
+//   position: absolute;
+//   padding: 0;
+//   margin: 0;
+//   margin-top: calc((1em * var(--checkbox-radio-line-height) - var(--checkbox-radio-size)) / 2);
+//   opacity: 0;
+//   height: var(--checkbox-radio-size);
+//   width: var(--checkbox-radio-size);
+//   pointer-events: none;
+// }
+
+// Labels for radio buttons and checkboxes
+input[type="radio"] + label,
+input[type="checkbox"] + label {
+  display: inline-flex;
+  align-items: flex-start;
+  line-height: var(--checkbox-radio-line-height);
+  user-select: none;
+  cursor: pointer;
+}
+
+// Custom buttons - basic style
+input[type="radio"] + label::before,
+input[type="checkbox"] + label::before {
+  content: '';
+  display: inline-block;
+  position: relative;
+  top: calc((.8em * var(--checkbox-radio-line-height) - var(--checkbox-radio-size)) / 2);
+  flex-shrink: 0;
+  width: var(--checkbox-radio-size);
+  height: var(--checkbox-radio-size);
+  background-color: $color-white;
+  border-width: var(--checkbox-radio-border-width);
+  border-color: $color-main;
+  border-style: solid;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin-right: var(--checkbox-radio-gap);
+  transition: transform .2s, border .2s;
+}
+
+// Radio only style
+input[type="radio"] + label::before {
+  border-radius: 50%;
+}
+
+// Checkbox only style
+input[type="checkbox"] + label::before {
+  border-radius: var(--checkbox-radius);
+}
+
+// Radio button and checkbox checked states
+input[type="radio"]:checked + label::before,
+input[type="checkbox"]:checked + label::before {
+  background-color: $color-main;
+  box-shadow: none;
+  border-color: $color-main;
+  transition: transform .2s;
+}
+
+// Radio button and checkbox active states
+input[type="radio"]:active + label::before,
+input[type="checkbox"]:active + label::before {
+  transform: scale(.8);
+  transition: transform .2s;
+}
+
+// // Radio button icon
+// input[type="radio"]:checked + label::before {
+//   background-image: url("data:image/svg+xml;charset=utf8, %3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cg class='nc-icon-wrapper' fill='%23ffffff'%3E%3Ccircle cx='8' cy='8' r='8' fill='%23ffffff'%3E%3C/circle%3E%3C/g%3E%3C/svg%3E");
+//   background-size: var(--radio-marker-size);
+// }
+
+// Checkbox button icon
+input[type="checkbox"]:checked + label::before {
+  background-image: url("data:image/svg+xml, %3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpolyline points='1 6.5 4 9.5 11 2.5' fill='none' stroke='%23FFFFFF' stroke-linecap='round' stroke-linejoin='round' stroke-width='2'/%3E%3C/svg%3E");
+  background-size: var(--checkbox-marker-size);
+}
+
+// Radio button and checkbox focus states
+input[type="radio"]:focus + label::before,
+input[type="checkbox"]:focus + label::before,
+input[type="radio"]:checked:active + label::before,
+input[type="checkbox"]:checked:active + label::before {
+  border-color: $color-main;
+  box-shadow: 0 0 0 3px rgba($color-main, .2);
+}
+
+// Radio button and checkbox checked + active states
+input[type="radio"]:checked:active + label::before,
+input[type="checkbox"]:checked:active + label::before {
+  transform: none;
+  transition: none;
+}
+
+// Radio button and checkbox hovers
+/* stylelint-disable sh-waqar/declaration-use-variable, selector-max-pseudo-class */
+input[type="radio"]:not(:checked):not(:focus) + label:hover::before,
+input[type="checkbox"]:not(:checked):not(:focus) + label:hover::before {
+  border-color: lighten($color-main, 15%);
+}
+/* stylelint-enable sh-waqar/declaration-use-variable, selector-max-pseudo-class */

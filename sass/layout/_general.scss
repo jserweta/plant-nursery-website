@@ -1,0 +1,174 @@
+// -----------------------------------------------------------
+// General
+//
+// This file is meant for general styles and containers
+// that apply everywhere throughout the website. Add more
+// always repeating elements right below.
+// -----------------------------------------------------------
+
+body {
+  background: $color-body;
+}
+.entry-header{
+  .page-title-heading{
+    margin-bottom: var(--padding-container-vertical);
+  }
+}
+
+.sec-heading{
+  color: $color-main;
+  font-weight: $font-weight-medium;
+}
+
+.page-title-heading{
+  font-weight: $font-weight-medium;
+  text-align: center;
+  margin-bottom: 0;
+}
+.page-title-heading::after{
+    content: "";
+    display: block;
+    border-top: 4px solid $color-main;
+    border-bottom: 4px solid $color-main;
+    background-color: $color-main;
+    width: 80px;
+    border-radius: $border-radius;
+    margin: 0 auto;
+    margin-top: 10px;
+}
+
+.title-latin{
+  color:$color-main;
+  font-family: 'Pacifico';
+  margin: 0;
+  font-weight: $font-weight-paragraphs;
+}
+
+.image-radius{
+  border-radius: $border-radius;
+}
+ 
+.remove-ul-styling {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.s-one-col {
+  @include grid(1);
+}
+
+.m-two-col {
+  @media (min-width: $container-ipad) {
+    @include grid(2);
+  }
+}
+
+.l-two-col {
+  @media (min-width: $container-ipad-landscape) {
+    @include grid(2);
+  }
+}
+
+.l-three-col {
+  @media (min-width: $container-ipad-landscape) {
+    @include grid(3);
+  }
+}
+
+// Site wrapper
+.site {
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  overflow: hidden;
+}
+
+// Containers
+.container {
+  margin: 0 auto;
+  padding-top: var(--padding-container-vertical);
+  padding-bottom: var(--padding-container-vertical);
+  padding-left: var(--padding-container-horizontal);
+  padding-right: var(--padding-container-horizontal);
+  max-width: $grid-base-size;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+// Clear block containers by default
+.site-main .container {
+  overflow: hidden;
+  clear: both;
+}
+
+// Meta actions
+.entry-footer {
+  overflow: hidden;
+  clear: both;
+  display: flex;
+  justify-content: space-between;
+}
+
+// Better edit link
+.edit-link {
+  text-align: left;
+  width: 100%;
+  display: block;
+  clear: both;
+  max-width: 100%;
+  min-width: 0;
+  margin-bottom: 0;
+  margin-top: 2rem;
+  overflow: hidden;
+  transition: all $transition-duration;
+
+  a {
+    clear: both;
+    text-align: center;
+    transition: all $transition-duration;
+    display: block;
+    padding: 2rem;
+    background: $color-background-edit-link;
+    color: $color-edit-link;
+    border: 2px dashed $color-edit-link;
+    margin: 0;
+    text-decoration: none;
+  }
+
+  a:hover {
+    color: $color-edit-link;
+    background: #efefef;
+  }
+}
+
+// Hide/show helpers
+.hide-on-desktop {
+  @media (min-width: $container-mobile) {
+    display: none !important;
+  }
+}
+
+.hide-on-mobile {
+  @media (max-width: $container-mobile) {
+    display: none !important;
+  }
+}
+
+// Only function of these is to force hide content based on the view
+.hide-on-mobile-nav-view {
+  @media (max-width: $responsivenav) {
+    display: none !important;
+  }
+}
+
+.hide-on-desktop-nav-view {
+  @media (min-width: $responsivenav) {
+    display: none !important;
+  }
+}
+
+.hide-completely {
+  display: none !important;
+}

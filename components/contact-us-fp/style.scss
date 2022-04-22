@@ -1,0 +1,179 @@
+.section-contact{
+    &__hero{
+        padding-top: var(--padding-container-vertical);
+        //padding-bottom: var(--padding-container-vertical);
+        position: relative;
+        
+        .sec-heading{
+            color: $color-white;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+        .image-wrapper{
+            .overlay,img{
+                width: 100%;
+                min-height: 300px;
+                height: 300px;
+            }
+            .overlay{
+                position: absolute;
+                top:0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background-color: rgba(0,0,0,0.2);
+                mix-blend-mode: normal;
+                z-index: 1;
+                
+            }
+            img{
+                position: absolute;
+                top:0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                z-index: -1;
+                object-fit: cover;
+            }
+        }
+    }
+
+    &__content{
+        position: relative;
+        z-index: 2;
+
+        align-items: center;
+        display: grid;
+        grid-template-columns: 1fr;
+        row-gap: 20px;
+    }
+
+    &__contact-info, &__form{
+        background-color: $color-white;
+        border-radius: $border-radius;
+        border: 2px solid $color-light;
+
+        padding:45px 25px;
+    }
+
+    &__contact-info{
+        align-items: center;
+        display: grid;
+        grid-template-columns: 1fr;
+        row-gap: 20px;
+
+        .divider{
+            margin: 0 auto;
+            width:30%;
+            height:1px;
+            border-radius: $border-radius;
+            background-color: $color-shadows;
+        }
+
+        .phones, .emails{
+            display: flex;
+            flex-direction: column;
+            margin: 0 auto;
+            text-align: center;
+            svg{
+                margin-bottom:20px;
+                height:40px;
+                width: auto;
+                fill: $color-main; 
+            }
+        }
+        .phones{
+            .phone-list:nth-of-type(1){
+                margin-bottom:20px;
+            }
+            .phone-item-type{
+                font-weight: $font-weight-medium;
+                margin-bottom: 1rem;
+            }
+            svg{
+                stroke: $color-main;
+            }
+        }
+    }
+
+    &__form{
+        padding-bottom:10px;
+        p{
+            margin-bottom: 0;
+        }
+        .form-acceptance-wrapper{
+            label span{
+                margin-left:15px;
+                font-size:14px;
+                color: $color-paragraphs;
+                display: inline;
+            } 
+           
+            .wpcf7-list-item{
+                margin-left:0;
+                label{
+                    display: flex;
+                }
+            }
+        }
+        .wpcf7-not-valid-tip{
+            font-size:1.5rem;
+        }
+        .wpcf7{
+            form{
+                .wpcf7-response-output {
+                    margin: 0.5em 0em;
+                    padding: .2em;
+                    font-size: 1.5rem;
+                    border: 0;
+                }
+            }
+        }
+    }
+
+    @media (min-width: $container-ipad){
+        &__contact-info{
+            grid-template-columns: 1fr 25px 1fr;
+            column-gap: 20px;
+            .phones, .emails{
+                margin: auto;
+                align-items: center;
+                
+            }
+            .divider{
+                width: 1px;
+                height:100%;
+            }
+        }
+    }
+
+    @media (min-width:$responsivenav){
+        &__content{
+            // display: grid;
+            // grid-template-columns: 0.5fr 1.5fr;
+            //column-gap: 20px;
+            // grid-auto-rows: 1fr;
+            display: flex;
+            align-items: flex-start;
+        }
+        &__contact-info, &__form{
+            padding: 45px;
+        }
+        &__form{
+            padding-bottom:10px;
+        }
+        &__contact-info{
+            margin-right: 50px;
+            grid-template-columns: 1fr;
+            
+            .divider{
+                margin: 0 auto;
+                width:30%;
+                height:1px;
+            }
+        }
+        
+    }
+
+}

@@ -1,0 +1,53 @@
+// Base colors
+$color-white: #fff;
+$color-black: #202020;
+$color-black-text: #333333;
+$color-shadows: #EAEAEA;
+
+$color-darkgrey: #EAEAEA;
+$color-lightgrey: #FCFCFC;
+
+// Required brand colors
+$color-main: #92AC26;
+$color-light:#BFD952;
+$color-dark: darken($color-main, 40%);
+$color-shade: #a3a3a3;
+
+
+// Official brand colors
+$color-bright: #81a9ff;
+
+// Element text and background colors
+$color-links: $color-black;
+$color-hover: $color-main;
+$color-paragraphs: $color-black-text;
+$color-headings:$color-black;
+$color-blockquotes: #666;
+$color-blog-tags: #061629;
+$color-tags-and-search-items: #eaf1f8;
+$color-code-blocks: #c7254e;
+$color-code-blocks-background: #f9f2f4;
+$color-border-forms: #d9d9d9;
+$color-code-background: #2b303c;
+$color-comments-link: #555;
+$color-edit-link: #999;
+$color-background-edit-link: #fafafa;
+$color-default-background: $color-dark;
+$color-success: lighten(#2d6426, 40%);
+$color-warning: lighten(#8e440b, 40%);
+$color-error: lighten(#903a37, 40%);
+$color-disabled: #bbb;
+$color-captions: rgba(#4b4b5a, .9);
+
+// Nav specific
+$color-separator-nav-mobile: transparent;
+$color-background-nav-desktop: transparent;
+$color-background-nav-mobile: $color-white;
+$color-nav-links: $color-black;
+
+$color-nav-container-sticky-desktop: $color-lightgrey;
+$color-nav-container-sticky-mobile: $color-nav-container-sticky-desktop;
+
+// Layout & features specific
+$color-top-bar: $color-shadows;
+$color-body: $color-white;

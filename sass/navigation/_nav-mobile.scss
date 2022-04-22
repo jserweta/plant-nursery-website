@@ -1,0 +1,404 @@
+// ---------------------------------------------------------
+// Site navigation mobile layout
+//
+// The main layout for the website navigation, for the mobile
+// version only.
+// -----------------------------------------------------------
+/* stylelint-disable selector-max-combinators, selector-max-compound-selectors, max-nesting-depth */
+$nav-toggle: ('color': $color-black,
+  'active-color': $color-black,
+);
+$nav-links: ('color': $color-nav-links,
+  'color-active': $color-black,
+  'color-current': $color-black,
+  'font-weight': 500,
+  'font-size': 15px,
+);
+$dropdown: ('background': transparent,
+);
+$dropdown-toggle: ('color': $color-black,
+  'background': transparent,
+  'active-color': $color-black,
+  'active-background': transparent,
+);
+$hamburger-padding-x: 1.5rem;
+$hamburger-padding-y: 4rem;
+$hamburger-layer-width: 3rem;
+$hamburger-layer-height: .2rem;
+$hamburger-layer-spacing: .5rem;
+$hamburger-layer-color: map-get($nav-toggle, 'color');
+$hamburger-layer-border-radius: 0;
+$hamburger-hover-opacity: .8;
+$hamburger-hover-transition-duration: .15s;
+$hamburger-hover-transition-timing-function: linear;
+$nav-open-from-direction: top;
+$mobile-nav-height: 80px;
+@import 'hamburgers/_sass/hamburgers/hamburgers';
+
+// Choose hamburger animation here
+// Choices: https://jonsuh.com/hamburgers/
+.hamburger {
+  @extend .hamburger--collapse;
+}
+
+// Let's ensure site-header loads properly and doesn't leave empty spaces
+@media (max-width: $responsivenav) {
+
+  .no-js .nav-container,
+  .no-js .site-header,
+  .no-js .main-navigation-wrapper,
+  .no-js .nav-toggle,
+  .no-js .search-wrapper {
+    height: $mobile-nav-height !important;
+  }
+
+  .no-js>div:first-of-type {
+    display: none !important;
+  }
+}
+
+// Mobile styles
+@media screen and (max-width: $responsivenav - 1px) {
+  .main-navigation-wrapper {
+    order: 6;
+    z-index: 999;
+  }
+
+  // Users that don't have Javascript enabled
+  .no-js .site-header {
+    position: static;
+
+    // Use the same color than navigation
+    background: $color-background-nav-mobile;
+  }
+
+  // Disable scroll on html body when menu is opened.
+  .disable-scroll {
+    overflow: hidden;
+  }
+
+  .main-title {
+    font-size: 14px;
+    font-weight: 400;
+  }
+
+  .sub-title {
+    font-size: 1.6rem;
+    opacity: .5;
+    display: none !important;
+  }
+
+  .main-title,
+  .sub-title {
+    width: 100%;
+    display: block;
+  }
+
+  .nav-primary {
+    height: 100vh;
+    width: 100vw;
+    overflow: auto;
+    transition: all $transition-duration ease-in-out;
+    margin: 0;
+    display: block;
+    will-change: opacity;
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+
+    // Main level mobile navigation links
+    a {
+      border-top: 1px solid $color-separator-nav-mobile;
+      padding-top: 1.2rem;
+      padding-bottom: 1.2rem;
+      padding-left: 2.5rem;
+      padding-right: 5.8rem; // Make room for the toggle button (sub indicator)
+      margin-left: 0;
+      margin-right: 0;
+      /* stylelint-disable */
+      color: map-get($nav-links, 'color');
+      font-size: map-get($nav-links, 'font-size');
+      font-weight: map-get($nav-links, 'font-weight');
+      /* stylelint-enable */
+      text-decoration: none;
+      position: relative;
+      z-index: 0;
+      display: block;
+      outline: none; // We have color here, so it's okay to remove outline
+    }
+
+    .menu-items {
+      opacity: 0;
+      margin: 0;
+      width: 100%;
+      float: none;
+      padding: 2rem 0;
+    }
+
+    // Prevent nav item overlapping with dropdown opening toggle
+    .has-submenu {
+      width: 80%;
+      position: static;
+    }
+
+    a:hover,
+    a:focus,
+    a:active {
+      /* stylelint-disable */
+      color: map-get($nav-links, 'color-active');
+      /* stylelint-enable */
+    }
+
+    .current-menu-parent>a,
+    .current-menu-item>a {
+      /* stylelint-disable */
+      color: map-get($nav-links, 'color-current');
+      /* stylelint-enable */
+    }
+
+    .disabled {
+      color: $color-disabled;
+    }
+
+    // Dropdown toggle
+    .dropdown-toggle {
+      position: absolute;
+      top: 0;
+      left: auto;
+      right: 10px;
+      width: 12px;
+      height: 7px;
+      overflow: hidden;
+      background: transparent;
+      border: 0;
+      padding: 20px;
+      z-index: 9999;
+      background-image: url('../svg/mobile-nav-arrow-down.svg');
+      background-position: center;
+      background-size: 12px 7px;
+      background-repeat: no-repeat;
+      transition: all $transition-duration;
+      transform: rotate(0);
+    }
+
+    .dropdown-toggle:focus {
+      z-index: 10000;
+    }
+
+    // Hide desktop toggles
+    .dropdown-toggle svg {
+      display: none;
+    }
+
+    .dropdown-toggle.toggled-on {
+      background-color: transparent;
+      transform: rotate(-180deg);
+      cursor: pointer;
+    }
+
+    // Dropdowns
+    ul {
+      background: map-get($dropdown, 'background');
+      margin-left: 0;
+      padding: 0;
+    }
+
+    // Slight margins to improve readability of sub-navs
+    // Second level
+    .sub-menu>li>a {
+      padding-left: 3.5rem;
+    }
+
+    // Do not focus when seeing anyway
+    [data-whatintent="mouse"] a:focus,
+    [data-whatintent="touch"] a:focus {
+      outline: none;
+    }
+  }
+
+  .js .nav-primary {
+    // Hide mobile navigation by default while enabling use of animations
+    position: fixed;
+    z-index: 5;
+
+    // Default position, IE needs this
+    // top: $mobile-nav-height;
+    top: 0;
+    left: 0;
+
+    .menu-items {
+      padding: 0;
+
+      // Let's keep the content always full height
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: center;
+    }
+  }
+
+  // Ensure nav stays in the same position when activated
+  .js.js-nav-active {
+    overflow: hidden;
+
+    .nav-primary {
+      visibility: visible;
+      opacity: 1;
+      pointer-events: all;
+      background: $color-background-nav-mobile;
+
+      @media(min-width: $responsivenav) {
+        background: $color-background-nav-desktop;
+      }
+    }
+
+    .menu-items {
+      opacity: 1;
+    }
+  }
+}
+
+.hamburger.is-active .hamburger-inner,
+.hamburger.is-active .hamburger-inner::before,
+.hamburger.is-active .hamburger-inner::after {
+  color: map-get($nav-toggle, 'active-color');
+  background: map-get($nav-toggle, 'active-color');
+}
+
+// Hamburger menu icon
+/* stylelint-disable selector-max-class */
+.nav-toggle {
+  list-style: none;
+  z-index: 100000;
+  border: 0;
+  overflow: visible;
+  color: map-get($nav-toggle, 'color');
+  font-weight: 700;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-touch-callout: none;
+  user-select: none;
+  text-decoration: none;
+  padding: 2rem;
+  margin: 0 -2rem 0 0;
+  background: transparent;
+  cursor: pointer;
+  position: relative;
+  top: 0;
+
+  // Hide from desktops
+  display: none;
+
+  // Modern stuff (::after is first line, without ::after is first)
+  &:not(.toggled-on) .hamburger-inner {
+    width: 18px;
+    transition: width $transition-duration;
+  }
+
+  &.is-active .hamburger-inner,
+  &:hover .hamburger-inner {
+    width: $hamburger-layer-width;
+  }
+
+  span {
+    color: map-get($nav-toggle, 'color');
+    font-size: 1.2em;
+  }
+
+  &.is-active span {
+    color: map-get($nav-toggle, 'active-color');
+  }
+
+  &:hover,
+  &:active {
+    color: map-get($nav-toggle, 'color');
+
+    span {
+      color: map-get($nav-toggle, 'color');
+    }
+  }
+
+  // Alternative focus for mobile nav
+  &:focus {
+    outline: none;
+
+    span span {
+      background-color: map-get($nav-toggle, 'color');
+    }
+
+    span span::before,
+    span span::after {
+      background-color: map-get($nav-toggle, 'color');
+    }
+  }
+
+  // We already have aria-label for button
+  // But we want to show nav-toggle visually for seeing users
+  // So we'll add has-visible-label to nav-toggle in header.php
+  &:not(.has-visible-label) .nav-toggle-label {
+    display: none;
+  }
+
+  @media (max-width: $responsivenav - 1px) {
+    display: block;
+
+    &.has-visible-label {
+      display: flex;
+      align-items: center;
+
+      .nav-toggle-label {
+        font-size: var(--font-size-nav-toggle-label);
+
+        // Hide on smallest phones
+        @media (max-width: 410px) {
+          display: none;
+        }
+      }
+
+      @media (min-width: 411px) {
+        .hamburger-box {
+          margin-right: 2rem;
+        }
+      }
+    }
+  }
+
+  // Separate active colors for opened state
+  &.is-active {
+    color: map-get($nav-toggle, 'active-color');
+  }
+
+  &.is-active .hamburger-box {
+    .hamburger-inner {
+      background-color: map-get($nav-toggle, 'active-color');
+    }
+
+    .hamburger-inner::after {
+      background-color: map-get($nav-toggle, 'active-color');
+    }
+  }
+
+  &.is-active .focus,
+  &.is-active span:focus {
+    .hamburger-inner {
+      background-color: map-get($nav-toggle, 'active-color');
+    }
+
+    .hamburger-inner::after {
+      background-color: map-get($nav-toggle, 'active-color');
+    }
+  }
+
+  &.is-active span:focus,
+  &.is-active span:hover,
+  &.is-active span:active {
+    color: map-get($nav-toggle, 'active-color');
+
+    span {
+      color: map-get($nav-toggle, 'active-color');
+    }
+  }
+}
+
+/* stylelint-enable selector-max-class */

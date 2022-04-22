@@ -1,0 +1,111 @@
+// -----------------------------------------------------------
+// Site header
+//
+// The very top of the site, element that usually includes
+// the site navigation and search for example.
+// -----------------------------------------------------------
+
+.site-header {
+  position: relative;
+  z-index: 15;
+  padding-bottom: var(--padding-site-header-vertical);
+  padding-top: var(--padding-site-header-vertical);
+  padding-left: var(--padding-container-horizontal);
+  padding-right: var(--padding-container-horizontal);
+  max-width: $grid-base-size;
+  margin-left: auto;
+  margin-right: auto;
+
+  // Easier flex way to align logo and navigation
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  
+  .social-medias {   
+    svg{
+      fill: $color-light;
+    }
+  }
+  .logo {
+    // width: 100px;
+    max-height: $navheight-mobile;
+    @media (min-width: $responsivenav) {
+     max-height: $navheight-expanded;
+    }
+  }
+}
+
+
+
+.top-bar {
+  display: none;
+}
+
+@if $top-bar==true {
+  .top-bar {
+    display: block;
+    background-color: $color-top-bar;
+    height: $top-bar-mobile;
+    transition: all $transition-duration ease;
+
+    @media (min-width: $responsivenav) {
+      height: $top-bar-expanded;
+    }
+
+    .container {
+      font-size: $font-size-small;
+      align-items: center;
+      position: relative;
+      z-index: 15;
+      padding-left: var(--padding-container-horizontal);
+      padding-right: var(--padding-container-horizontal);
+      padding-top: 15px;
+      padding-bottom: 15px;
+      max-width: $grid-base-size;
+      margin-left: auto;
+      margin-right: auto;
+      height: auto;
+      position: relative;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    a {
+      font-size: $font-size-small; 
+      display: block;
+    }
+    &__open-hours{
+      justify-content: center;
+      align-items: center;
+      display: flex;
+      .hours{
+        display: flex;
+        flex-direction: column;
+      }
+      span{
+        font-size: $font-size-tiny; 
+      }
+
+      span:nth-of-type(1){
+        margin-right: 10px;
+      }
+      svg{
+        margin-right: 20px;
+        width: 20px;
+        height: 20px;
+        display: block;
+      } 
+
+      @media (min-width: $container-mobile) {
+        justify-content: flex-end;
+        .hours{
+          display: block;
+        }
+        span{
+          font-size: $font-size-small;
+        }
+      }
+     
+    }
+  }
+}

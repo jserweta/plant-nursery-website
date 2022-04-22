@@ -1,0 +1,181 @@
+// --------------------------------------------------------
+// Comments
+//
+// WordPress built-in comments with comment_form().
+// Custom comment template can be found in inc/comments.php
+// --------------------------------------------------------
+
+/* stylelint-disable no-descending-specificity */
+.comments-area {
+  margin-top: 50px;
+  margin-bottom: 0;
+  overflow: visible;
+}
+
+.comment-list {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+
+  li {
+    font-size: var(--font-size-tiny);
+    padding: 0;
+    margin-top: 0;
+    margin-bottom: 70px;
+  }
+
+  p {
+    font-size: var(--font-size-tiny);
+    color: $color-darkgrey;
+  }
+
+  .avatar {
+    float: right;
+    border-radius: 50%;
+  }
+
+  .comment-author {
+    @extend %h4;
+    color: $color-paragraphs;
+    margin-top: 0;
+    margin-bottom: 10px;
+    padding: 0;
+  }
+
+  a,
+  .comments-link a {
+    color: $color-comments-link;
+    box-shadow: none;
+  }
+
+  .comment-author a {
+    color: $color-paragraphs;
+  }
+
+  .comment-time {
+    font-size: var(--font-size-tiny);
+    padding: 0;
+    margin: 0;
+
+    a {
+      color: $color-darkgrey;
+    }
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+  .comment-time svg {
+    fill: $color-darkgrey;
+    position: relative;
+    top: 2px;
+    margin-right: 5px;
+  }
+}
+
+.comments-link {
+  font-size: var(--font-size-tiny);
+  text-align: right;
+  display: inline-flex;
+  align-items: center;
+
+  a {
+    color: $color-comments-link;
+  }
+
+  &:hover,
+  &:focus,
+  a:hover,
+  a:focus {
+    color: $color-black;
+  }
+
+  svg {
+    margin-right: 7px;
+    top: -1px;
+    position: relative;
+  }
+}
+
+// Comment form grid
+.comment-form {
+  @media (min-width: $container-mobile) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 1em;
+
+    /* autoprefixer: off */
+    justify-content: center;
+
+    // Make these full width
+    .comment-notes,
+    .comment-form-comment,
+    .form-submit {
+      grid-column: 1 / span 2;
+    }
+  }
+}
+
+.comment-respond {
+  margin-bottom: 0;
+  overflow: visible;
+
+  input {
+    @media (max-width: $container-mobile) {
+      width: 100%;
+    }
+  }
+
+  .comment-form-author {
+    margin-bottom: 20px;
+    margin-top: 0;
+
+    input {
+      padding: 15px;
+      border-width: 1px;
+      width: 100%;
+    }
+  }
+
+  .comment-form-email {
+    margin-right: 0;
+    clear: right;
+    margin-bottom: 20px;
+    margin-top: 0;
+
+    input {
+      padding: 15px;
+      border-width: 1px;
+      width: 100%;
+    }
+  }
+
+  .comment-form-url {
+    position: relative;
+    margin-top: 0;
+    margin-bottom: 30px;
+
+    input {
+      padding: 15px;
+      border-width: 1px;
+      width: 100%;
+    }
+  }
+
+  .form-submit {
+    display: block;
+    clear: both;
+    margin-bottom: 0;
+    margin-top: 0;
+  }
+
+  .comment-form-comment {
+    margin-bottom: 20px;
+  }
+
+  textarea {
+    width: 100%;
+  }
+}
+/* stylelint-enable no-descending-specificity */

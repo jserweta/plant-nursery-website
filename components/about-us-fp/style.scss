@@ -1,0 +1,51 @@
+.section-about-us{
+    margin-top: var(--padding-container-vertical);
+    margin-bottom: var(--padding-container-vertical);
+
+    &__content{
+        border-bottom-left-radius: $border-radius;
+        border-bottom-right-radius: $border-radius;
+        padding:45px 25px;
+        background-color: $color-main;
+        color: $color-white;
+        p, .button-white{
+            margin-top: 45px;
+        }
+        h2{
+            color: $color-white;
+        }
+    }
+
+    &__image{
+        img{
+            max-height: 600px;
+            border-top-left-radius: $border-radius;
+            border-top-right-radius: $border-radius;
+            object-fit: cover;
+            height: 100%;
+            width: 100%;
+        }
+       
+    }
+   
+    @media (min-width:$responsivenav){
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+
+        &__content{
+            border-top-right-radius: $border-radius;
+            border-bottom-right-radius: $border-radius;
+            border-bottom-left-radius: 0;
+            padding:45px;
+        }
+        &__image{
+            img{
+                max-height: 700px;
+                border-top-left-radius: $border-radius;
+                border-bottom-left-radius: $border-radius;
+                border-top-right-radius: 0;
+            }
+        }
+        
+    }
+}

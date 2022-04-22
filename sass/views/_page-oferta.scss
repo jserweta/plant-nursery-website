@@ -1,0 +1,88 @@
+.products-page{
+   
+    &__products-filters{
+        margin-bottom:40px;
+        border-radius: $border-radius;
+        border:2px solid $color-light;
+        padding:28px;
+        h2{
+            font-weight: $font-weight-medium;
+        }
+        .product-single-cat{
+            padding:1rem 0;
+            a{
+                display: grid;
+                grid-template-columns: 1fr 20px;
+                .icon{
+                    text-align: center;
+                    svg{
+                        fill: $color-main;
+                        transition: all $transition-duration ease-in-out;
+                    }                 
+                }
+                &:hover{
+                    .icon svg{
+                        padding-left:10px;
+                    }
+                }
+            }
+        }
+        .product-single-cat:not(:last-child){
+            border-bottom: 1px solid $color-shadows;
+        }
+    }
+
+    &__products-section{
+        .products-grid{
+            display:grid;
+            grid-template-columns: 1fr;
+            row-gap: 30px;
+        }
+    }
+    
+
+    
+
+    @media (min-width: $container-ipad){
+        &__info{
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            column-gap: 40px;
+            .cta-button{
+                height: fit-content;
+            }
+        }
+        &__products-section{
+            .products-grid{
+                display: grid;
+                grid-template-columns: repeat(2,1fr);
+                column-gap: 30px;
+                row-gap: 30px;
+            }
+        }
+    }
+
+    @media (min-width: $responsivenav){
+        &__products-filters{
+            max-width: 250px;
+            height: fit-content;
+        }
+        &__products-section{
+            display: grid;
+            grid-template-columns: 1fr 3fr;
+            column-gap: 40px;
+
+           
+        }
+    }
+    @media (min-width: $container-ipad-landscape){
+        &__products-section{
+            .products-grid{
+                display: grid;
+                grid-template-columns: repeat(3,1fr);
+                column-gap: 30px;
+                row-gap: 30px;
+            }
+        }
+    }
+}

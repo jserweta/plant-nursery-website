@@ -1,0 +1,24 @@
+.cta-button{
+    display: block;
+    padding: 20px 40px;
+    border-radius: $border-radius;
+    border:2px solid $color-light;
+    text-align: center;
+    transition: $transition-duration linear background;
+    &__title{
+        color: $color-black;
+        font-weight: $font-weight-medium;
+        margin-bottom: 0;
+    }
+
+    svg{
+        height: 100px;
+        width: auto;
+        fill: $color-main;
+    }
+
+}
+
+.cta-button:hover{ 
+    box-shadow: 0px 0px 10px 3px rgba(0,0,0,0.14);
+}

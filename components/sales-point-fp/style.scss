@@ -1,0 +1,169 @@
+.section-sales-point{
+    padding-top: var(--padding-container-vertical);
+    padding-bottom: var(--padding-container-vertical);
+    text-align: center;
+
+    .button-white, .button-green-border{
+        padding:17px 5px;
+    }
+
+    &__content{
+       border-radius: $border-radius $border-radius 0 0;
+       border: 2px solid $color-light;
+       padding:45px 25px;
+       border-bottom: 0px;
+    }
+
+    &__open-hours{
+        margin-bottom:45px;
+        .season{
+            display: grid;
+            grid-template-columns: 1fr;
+            h3{
+                @include responsive-font($font-size-min-h4, $font-size-max-h4);
+            }
+
+            svg{
+                width: 38px;
+                height: 38px;
+                fill: $color-main;
+                margin: 0 auto;
+            }
+            &:first-child{
+                margin-bottom: 45px;
+            }
+        }
+    }
+
+    &__cta{
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+        justify-content: center;
+        align-items: center;
+        margin-bottom:45px;
+        p{
+            //margin-bottom: 0;
+            text-align: center;
+        }
+    }
+
+    &__contact{
+        align-items: center;
+        display: grid;
+        grid-template-columns: 1fr;
+        row-gap: 20px;
+             
+        
+        .phones, .address{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            svg{
+                margin-bottom:20px;
+                height:40px;
+                width: auto;
+                fill: $color-main;
+                stroke: $color-main;
+            }
+        }   
+
+        .address{
+            p{
+                margin-top:0;
+            }
+        }
+        .divider{
+            margin: 0 auto;
+            width:30%;
+            height:1px;
+            border-radius: $border-radius;
+            background-color: $color-shadows;
+        }
+    }
+
+    &__map{
+        width: 100%;
+        height: 600px;
+        iframe{
+          border-radius: 0 0 $border-radius $border-radius;
+        }
+    }
+    @media (min-width: $container-mobile){
+       &__cta{
+        flex-direction: row;
+      
+            p{
+                margin-right: 30px;
+                text-align: left;
+                margin-bottom: 0;
+            }
+       }
+    }
+    @media (min-width: $container-ipad){
+        &__open-hours{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            
+            .season{
+                display: grid;
+                grid-template-rows: 80px 40px 1fr;
+                &:first-child{
+                    margin-bottom: 0;
+                }
+            }
+        }
+        &__contact{
+            grid-template-columns: 1fr 25px 1fr;
+            column-gap: 20px;
+            .phones, .address{
+                margin: auto;
+                align-items: center;
+                flex-direction: row;
+                justify-content: space-between;
+                margin: 0 auto;
+                text-align: left;
+                svg{
+                    margin-bottom: 0;
+                    margin-right: 20px;
+                }
+                
+            }
+            .divider{
+                width: 1px;
+                height:100%;
+            }
+        }
+    }
+
+    @media (min-width: $container-ipad-landscape){
+        &__contact{
+            .phones, .address{
+                justify-content: left;
+            }
+        }
+    }
+
+    @media (min-width:$responsivenav){
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+    
+        &__content{
+            border-radius: $border-radius 0 0 $border-radius;
+            border: 2px solid $color-light;
+            border-right: 0px;
+            padding:45px;
+        }
+        
+        &__map{
+            width: auto;
+            height: auto;
+            iframe{
+                border-radius: 0 $border-radius $border-radius 0;
+            }
+        }
+        
+    }
+}

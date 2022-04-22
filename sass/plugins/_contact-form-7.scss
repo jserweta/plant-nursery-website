@@ -1,0 +1,40 @@
+.wpcf7-form {
+
+  label,
+  input,
+  textarea {
+    display: block;
+  }
+
+  .form {
+
+    &__input input,
+    &__textarea textarea {
+
+      width: 100%;
+      background: transparent;
+      border: none;
+      border-bottom: 1px solid $color-darkgrey;
+      margin-bottom: 2.4rem;
+    }
+
+    &__rodo {
+
+      .wpcf7-list-item {
+        margin: 0;
+
+        label {
+          display: flex;
+
+          input[type="checkbox"] {
+            margin-right: 10px;
+          }
+
+          span {
+            font-size: 1.2rem;
+          }
+        }
+      }
+    }
+  }
+}
