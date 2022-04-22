@@ -2,13 +2,16 @@
 
 Theme developed by JSerweta. Come say hi: https://jakubserweta.pl/.
 
-## Required plugins
+Check out demo page [HERE]:http://kiwwwi.imenet.pl/
+## Screenshot:
+### Home page
 
-1. Advanced Custom Fields PRO
-2. Contact Form 7
+![Screenshot](https://github.com/jserweta/plant-nursery-website/blob/main/img/home-page.png)
 
-## Installation 
+### Offer page
 
-1. In your admin panel, go to Appearance > Themes and click the Add New button.
-2. Click Upload Theme and Choose File, then select the theme's .zip file. Click Install Now.
-3. Click Activate to use your new theme right away.
+![Screenshot](https://github.com/jserweta/plant-nursery-website/blob/main/img/offer-page.png)
+
+### Product page
+
+![Screenshot](https://github.com/jserweta/plant-nursery-website/blob/main/img/product-page.png)
