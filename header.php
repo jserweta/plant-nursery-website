@@ -11,7 +11,7 @@
  */
 
 $logo_svg = get_field('logo', 'option');
-$logo_png = get_field('logo_png', 'option');
+$logo_main = get_field('logo_main', 'option');
 
 $phones = get_field('phones', 'option');
 $emails = get_field('e-mails', 'option');
@@ -24,6 +24,7 @@ $open_hours = get_field('godziny_otwarcia', 'option');
 <head>
 	<meta charset="<?php bloginfo('charset'); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Strona zwierająca ofertę szkółki roślin Mikulscy.">
 	<link rel="profile" href="http://gmpg.org/xfn/11">
 
 	<?php wp_head(); ?>
@@ -42,7 +43,10 @@ $open_hours = get_field('godziny_otwarcia', 'option');
 							$sunday = $open_hours['nd'];
 							$icon = $open_hours['icon'];?>
 							<div class="top-bar__open-hours">
-								<?php echo $icon; ?>
+                <figure class="top-bar__open-hours-figure">
+                  <?php echo wp_get_attachment_image($icon, "large"); ?>
+                </figure>
+
 								<div class="hours">
 									<span><?php echo esc_html('Pon-pt: '); echo $monday_friday;?></span>
 									<span><?php echo esc_html('Sob: '); echo $saturday; ?></span>
@@ -56,26 +60,20 @@ $open_hours = get_field('godziny_otwarcia', 'option');
 					<?php if (is_front_page() && is_home()) : ?>
 						<a href="<?php echo esc_url(home_url('/')); ?>" rel="home">
 							<span class="screen-reader-text"><?php bloginfo('name'); ?></span>
-							<?php if (!empty($logo_svg) && isset($logo_svg)) : ?>
-								<!-- ACF SVG logo -->
-								<span class="logo"><?php echo $logoSvg ?></span>
-							<?php endif; ?>
-
-							<?php if (!empty($logo_png) && isset($logo_png)) : ?>
-								<!-- ACF PNG logo -->
-								<img class="logo" src="<?php echo $logo_png['url'] ?>" alt="<?php echo $logo_png['alt'] ?>">
+							<?php if (!empty($logo_main) && isset($logo_main)) : ?>
+                <figure class="site-branding__figure">
+                  <?php echo wp_get_attachment_image($logo_main, 'large', false, ["class" => "logo"]); ?>
+                </figure>
 							<?php endif; ?>
 						</a>
 					<?php else : ?>
 						<a href="<?php echo esc_url(home_url('/')); ?>" rel="home">
 							<span class="screen-reader-text"><?php bloginfo('name'); ?></span>
-							<?php if (!empty($logo_svg) && isset($logo_svg)) : ?>
-								<!-- ACF SVG logo -->
-								<?php echo $logo_svg ?>
-							<?php endif; ?>
-							<?php if (!empty($logo_png) && isset($logo_png)) : ?>
+							<?php if (!empty($logo_main) && isset($logo_main)) : ?>
 								<!-- ACF PNG logo -->
-								<img class="logo" src="<?php echo $logo_png['url'] ?>" alt="<?php echo $logo_png['alt'] ?>">
+                <figure class="site-branding__figure">
+								  <?php echo wp_get_attachment_image($logo_main, 'large', false, ["class" => "logo"]); ?>
+                </figure>
 							<?php endif; ?>
 						</a>
 					<?php endif; ?>
@@ -106,6 +104,6 @@ $open_hours = get_field('godziny_otwarcia', 'option');
 					</nav><!-- #nav -->
 				</div>
 
-				<?php get_template_part('components/social-media/index'); ?>
+				<?php get_template_part('template-parts/components/social-media'); ?>
 			</header>
 		</div><!-- .nav-container -->

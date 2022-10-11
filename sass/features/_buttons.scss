@@ -1,0 +1,44 @@
+.button-green,
+.button-white,
+.button-green-border {
+  display: block;
+  // padding: 1.7rem 1.5rem;
+  width: fit-content;
+  // width: 180px;
+  height: fit-content;
+  padding: 1.7rem 3rem;
+  color: $color-white;
+  font-weight: $font-weight-medium;
+  text-align: center;
+  background-color: $color-main;
+  border: .2rem solid $color-main;
+  border-radius: $border-radius;
+  transition: $transition-duration linear background;
+
+  @media (min-width: $container-ipad) {
+    // width: 200px;
+  }
+}
+
+.button-white {
+  color: $color-main;
+  background-color: $color-white;
+}
+
+.button-green:hover {
+  color: $color-main;
+  background-color: $color-white;
+  border: .2rem solid $color-white;
+}
+
+.button-white:hover {
+  color: $color-white;
+  background-color: $color-main;
+  border: 2px solid $color-white;
+}
+
+.button-green-border:hover {
+  color: $color-main;
+  background-color: $color-white;
+  border: 2px solid $color-main;
+}

@@ -9,8 +9,8 @@
   }
 
   .site-header {
-    padding-bottom: 0;
     padding-top: 0;
+    padding-bottom: 0;
   }
 }
 
@@ -19,18 +19,18 @@
 }
 
 .nav-container {
-  background-color: $color-lightgrey;
   position: fixed;
-  transition: all $transition-duration ease;
-  height: $navheight-mobile;
   width: 100%;
-  z-index: 9999;
+  height: $navheight-mobile;
+  background-color: $color-lightgrey;
+  transition: all $transition-duration ease;
   overflow: visible;
+  z-index: 9999;
 
   .site-header {
-    height: auto;
     position: relative;
     top: 50%;
+    height: auto;
     transform: translateY(-50%);
   }
 
@@ -39,11 +39,11 @@
   }
 
   &.nav-container-sticky {
-    background: $color-nav-container-sticky-mobile;
     position: fixed;
-    height: $navheight-collapsed;
-    top: 0;
     left: 0;
+    top: 0;
+    height: $navheight-collapsed;
+    background: $color-nav-container-sticky-mobile;
 
     @media (min-width: $responsivenav) {
       background: $color-nav-container-sticky-desktop;
@@ -71,13 +71,12 @@
         margin-top: -$navheight-expanded;
       }
     }
- 
+
     &.scrolling-up {
       top: 0;
     }
   }
 }
-
 
 @if $top-bar==true {
   main {
@@ -99,9 +98,9 @@
     }
 
     .site-header {
+      top: 0;
       height: $navheight-mobile;
       transform: none;
-      top: 0;
 
       @media (min-width: $responsivenav) {
         height: $navheight-expanded;
@@ -109,11 +108,11 @@
     }
 
     &.nav-container-sticky {
-      background: $color-nav-container-sticky-mobile;
       position: fixed;
-      height: $navheight-collapsed + $top-bar-collapsed;
-      top: 0;
       left: 0;
+      top: 0;
+      height: $navheight-collapsed + $top-bar-collapsed;
+      background: $color-nav-container-sticky-mobile;
 
       @media (min-width: $responsivenav) {
         background: $color-nav-container-sticky-desktop;
@@ -135,6 +134,7 @@
       // Hide when scrolling down, show again when scrolling up
       &.scrolling-down {
         margin-top: calc(-1 * (#{$navheight-mobile} + #{$top-bar-mobile}));
+
         @media (min-width: $responsivenav) {
           margin-top: calc(-1 * (#{$navheight-expanded} + #{$top-bar-expanded}));
         }

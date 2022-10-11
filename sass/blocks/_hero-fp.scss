@@ -1,0 +1,147 @@
+$container-margin: calc((99vw - #{$grid-base-size})/2);
+
+.swiper-container.fp-hero-slider {
+  height: 81vh;
+
+  @media (min-width: $container-ipad-landscape) {
+    height: 85vh;
+  }
+
+  .swiper-slide {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &__link {
+      margin-top: 30px;
+    }
+
+    .swiper-content {
+      position: relative;
+      justify-content: center;
+
+      width: 100%;
+      margin: 0 auto;
+      text-align: center;
+      z-index: 2;
+      mix-blend-mode: normal;
+
+      .container {
+        padding-left: 0;
+      }
+
+      @media (min-width: $container-desktop) {
+        width: $grid-base-size /2;
+        //margin-left: $container-margin;
+      }
+
+      &__info {
+        padding: 20px 45px;
+        background-color: rgba($color-white, .64);
+        border-radius: $border-radius;
+      }
+
+      &__open-hours {
+        &-figure {
+          width: 60px;
+          height: 60px;
+          margin: 0 auto;
+
+          img {
+            width: auto;
+            height: 100%;
+            object-fit: contain;
+          }
+        }
+      }
+
+      &__button {
+        margin: 30px auto 0 auto;
+        border: none;
+
+        &:hover {
+          border: none;
+        }
+      }
+
+      &__heading {
+        margin-bottom: 0;
+        color: $color-black;
+        font-weight: $font-weight-medium;
+
+        @include responsive-font($font-size-max-h4,$font-size-max-h3);
+      }
+
+      &__desc {
+        max-width: 350px;
+        margin-top: 0;
+        color: $color-dark;
+        font-size: $font-size-small;
+        text-align: left;
+        mix-blend-mode: normal;
+      }
+
+      @media (min-width: $container-ipad) {
+        &__heading {
+          @include responsive-font($font-size-max-h2,$font-size-max-h1);
+        }
+
+        &__open-hours {
+          &-figure {
+            width: 80px;
+            height: 80px;
+          }
+        }
+      }
+    }
+
+    .image-wrapper {
+      position: static;
+      margin-bottom: 0;
+
+      .overlay,
+      img {
+        width: 100%;
+        height: 100%;
+      }
+
+      .overlay {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, .2);
+        z-index: 1;
+        mix-blend-mode: normal;
+      }
+
+      img {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        object-fit: cover;
+        z-index: -1;
+      }
+    }
+  }
+
+  .swiper-pagination {
+    bottom: 5%;
+  }
+
+  .swiper-pagination-bullet {
+    width: 8px;
+    height: 8px;
+    background-color: $color-lightgrey;
+    opacity: 1;
+  }
+
+  .swiper-pagination-bullet-active {
+    width: 8px;
+    height: 8px;
+    background-color: $color-main;
+  }
+}

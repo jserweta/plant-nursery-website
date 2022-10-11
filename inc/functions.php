@@ -24,3 +24,11 @@ function awesome_acf_responsive_image($image_id, $image_size, $max_width)
         echo 'src="' . $image_src . '" srcset="' . $image_srcset . '" sizes="(max-width: ' . $max_width . ') 100vw, ' . $max_width . '"';
     }
 }
+
+function custom_mime_types($mimes)
+{
+  $mimes['svg'] = 'image/svg+xml';
+  return $mimes;
+}
+
+add_action('upload_mimes', 'custom_mime_types');

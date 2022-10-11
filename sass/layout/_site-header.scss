@@ -1,41 +1,37 @@
-// -----------------------------------------------------------
-// Site header
-//
-// The very top of the site, element that usually includes
-// the site navigation and search for example.
-// -----------------------------------------------------------
-
 .site-header {
   position: relative;
-  z-index: 15;
-  padding-bottom: var(--padding-site-header-vertical);
-  padding-top: var(--padding-site-header-vertical);
-  padding-left: var(--padding-container-horizontal);
-  padding-right: var(--padding-container-horizontal);
-  max-width: $grid-base-size;
-  margin-left: auto;
-  margin-right: auto;
 
   // Easier flex way to align logo and navigation
   display: flex;
   align-items: center;
   justify-content: space-between;
-  
-  .social-medias {   
-    svg{
-      fill: $color-light;
-    }
-  }
-  .logo {
-    // width: 100px;
-    max-height: $navheight-mobile;
-    @media (min-width: $responsivenav) {
-     max-height: $navheight-expanded;
+  max-width: $grid-base-size;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--padding-container-horizontal);
+  padding-right: var(--padding-container-horizontal);
+  padding-top: var(--padding-site-header-vertical);
+  padding-bottom: var(--padding-site-header-vertical);
+  z-index: 15;
+
+  .site-branding {
+    &__figure {
+      height: $navheight-mobile;
+      margin: 0;
+
+      @media (min-width: $responsivenav) {
+        height: $navheight-expanded;
+      }
+
+      .logo {
+        // width: 100px;
+        width: auto;
+        height: 100%;
+        object-fit: cover;
+      }
     }
   }
 }
-
-
 
 .top-bar {
   display: none;
@@ -44,8 +40,8 @@
 @if $top-bar==true {
   .top-bar {
     display: block;
-    background-color: $color-top-bar;
     height: $top-bar-mobile;
+    background-color: $color-top-bar;
     transition: all $transition-duration ease;
 
     @media (min-width: $responsivenav) {
@@ -53,59 +49,69 @@
     }
 
     .container {
-      font-size: $font-size-small;
-      align-items: center;
       position: relative;
-      z-index: 15;
+      position: relative;
+      top: 50%;
+      align-items: center;
+      height: auto;
+      max-width: $grid-base-size;
+      margin-left: auto;
+      margin-right: auto;
       padding-left: var(--padding-container-horizontal);
       padding-right: var(--padding-container-horizontal);
       padding-top: 15px;
       padding-bottom: 15px;
-      max-width: $grid-base-size;
-      margin-left: auto;
-      margin-right: auto;
-      height: auto;
-      position: relative;
-      top: 50%;
+      font-size: $font-size-small;
       transform: translateY(-50%);
+      z-index: 15;
     }
 
     a {
-      font-size: $font-size-small; 
       display: block;
+      font-size: $font-size-small;
     }
-    &__open-hours{
-      justify-content: center;
-      align-items: center;
+
+    &__open-hours {
       display: flex;
-      .hours{
+      align-items: center;
+      justify-content: center;
+
+      .hours {
         display: flex;
         flex-direction: column;
       }
-      span{
-        font-size: $font-size-tiny; 
+
+      span {
+        font-size: $font-size-tiny;
       }
 
-      span:nth-of-type(1){
+      span:nth-of-type(1) {
         margin-right: 10px;
       }
-      svg{
-        margin-right: 20px;
+
+      &-figure {
         width: 20px;
         height: 20px;
-        display: block;
-      } 
+        margin: 0 20px 0 0;
+
+        img {
+          width: auto;
+          height: 100%;
+          object-fit: contain;
+        }
+      }
 
       @media (min-width: $container-mobile) {
         justify-content: flex-end;
-        .hours{
+
+        .hours {
           display: block;
         }
-        span{
+
+        span {
           font-size: $font-size-small;
         }
       }
-     
     }
   }
 }

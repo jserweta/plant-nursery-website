@@ -1,62 +1,74 @@
 $columns-margin:30px;
- 
-.about-us-row{
 
-    &__image{
-        img{
-            max-height: 400px;
-            object-fit: cover;
-            margin-top:30px;
-            width: 100%;
-        }
+.about-us-row {
+  &__image {
+    img {
+      width: 100%;
+      max-height: 400px;
+      margin-top: 30px;
+      object-fit: cover;
     }
-    //col with text
-    .image-first:nth-child(1){
-        order: 2;
-        margin-left: 0px;
-        @media (min-width: $container-ipad){
-            
-            // order:1;
-            margin-right:0px;
-            margin-left: $columns-margin;
-        }
+  }
+  //col with text
+  .image-first:nth-child(1) {
+    order: 2;
+    margin-left: 0;
+
+    @media (min-width: $container-ipad) {
+      margin-left: $columns-margin;
+
+      // order:1;
+      margin-right: 0;
     }
-    //col with image
-    .image-first:nth-child(2){
-        order: 1;
+
+    &.slide-right {
+      @extend .slide-right;
+      transform: translateX(3rem);
+    }
+  }
+  //col with image
+  .image-first:nth-child(2) {
+    order: 1;
+    margin-right: 0;
+    margin-top: 0;
+    text-align: left;
+
+    @media (min-width: $container-ipad) {
+
+      // order:2;
+      // text-align: center;
+      margin-left: 0;
+      margin-right: $columns-margin;
+
+      &.about-us-row__image {
+        margin-left: 0;
+      }
+    }
+
+    &.slide-left {
+      @extend .slide-left;
+      transform: translateX(-3rem);
+    }
+  }
+
+  @media (min-width: $container-ipad) {
+    &:not(:first-of-type) {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+
+    &:not(:first-of-type) &__image {
+      margin-left: $columns-margin;
+
+      img {
+        height: 100%;
+        max-height: 100%;
         margin-top: 0;
-        margin-right: 0px;
-        text-align: left;
-        @media (min-width: $container-ipad){
-            
-            // order:2;
-            // text-align: center;
-            margin-left:0px;
-            margin-right: $columns-margin;
-            &.about-us-row__image{
-                margin-left: 0;
-            }
-        }
+      }
     }
-    @media(min-width: $container-ipad){
-        &:not(:first-of-type){
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-        }
 
-        &:not(:first-of-type) &__image{
-            margin-left: $columns-margin;
-            img{
-                margin-top: 0;
-                height: 100%;
-                max-height: 100%;
-            }
-        }
-    
-        &:not(:first-of-type) &__content{
-            margin-right: $columns-margin;
-        }
+    &:not(:first-of-type) &__content {
+      margin-right: $columns-margin;
     }
+  }
 }
-
-

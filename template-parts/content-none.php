@@ -13,8 +13,9 @@
 <section class="no-results not-found">
 	<div class="container">
 		<header class="page-header">
-			<h1 class="page-title"><?php esc_html_e('Brak zawartości', 'imenet'); ?></h1>
-		</header><!-- .page-header -->
+			<h1 class="page-title"><?php esc_html_e('Upss...', 'imenet'); ?></h1>
+			<p><?php esc_html_e('Aktualnie nie posiadamy tego typu produktów w ofercie.', 'imenet'); ?></p>
+      </header><!-- .page-header -->
 
 		<div class="page-content">
 			<?php

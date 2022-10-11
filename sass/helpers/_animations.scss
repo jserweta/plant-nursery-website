@@ -1,2 +1,39 @@
 // Transition duration and animations
 $transition-duration: .22s;
+$cubic-bezier: cubic-bezier(.23, 1, .32, 1);
+
+.fade-in {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(3rem);
+  transition: 2s transform $cubic-bezier, 1s opacity $cubic-bezier;
+
+  &.-active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+}
+
+.slide-left {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(3rem);
+  transition: 2s transform $cubic-bezier, 1s opacity $cubic-bezier;
+}
+
+.slide-right {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(-3rem);
+  transition: 2s transform $cubic-bezier, 1s opacity $cubic-bezier;
+}
+
+.slide-left,
+.slide-right {
+  &.-active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);
+  }
+}

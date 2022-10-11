@@ -13,10 +13,11 @@ get_header();
 
 <main id="primary" class="site-main">
 
-	<section class="error-404 not-found">
+	<section class="block-error-404 not-found">
 		<div class="container">
 			<header class="page-header">
-				<h1 class="page-title"><?php esc_html_e('Strony nie znaleziono.', 'imenet'); ?></h1>
+        <h1 class="page-title-heading"><?php esc_html_e('404', 'imenet'); ?></h1>
+				<h2 class=""><?php esc_html_e('Strony nie znaleziono.', 'imenet'); ?></h2>
 			</header><!-- .page-header -->
 
 			<div class="page-content">

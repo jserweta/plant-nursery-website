@@ -32,7 +32,7 @@ function filter_function_products()
         <ul class="remove-ul-styling products-grid" data-page="<?= get_query_var('paged') ? get_query_var('paged') : 1; ?>" data-max="<?= $query->max_num_pages; ?>">
             <?php 
             while ($query->have_posts()) : $query->the_post();
-                get_template_part('components/product-thumbnail/index');
+                get_template_part('template-parts/components/product-thumbnail');
             endwhile; ?>
             
         </ul>
@@ -78,7 +78,7 @@ function pagination_ajax(){
     if ($query->have_posts()) : ?>
         <ul class="remove-ul-styling products-grid" data-page="<?= get_query_var('paged') ? get_query_var('paged') : 1; ?>" data-max="<?= $query->max_num_pages; ?>">
             <?php while ($query->have_posts()) : $query->the_post();
-                get_template_part('components/product-thumbnail/index');
+                get_template_part('template-parts/components/product-thumbnail');
             endwhile; ?>
         </ul>
 

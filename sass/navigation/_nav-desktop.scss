@@ -111,7 +111,7 @@ $submenu-dropdown-toggle-hover: ('background': $color-white,
 
   .nav-primary>ul:first-of-type>.menu-item-has-children:hover::before {
     transform: scale(1);
-    transition: all .25s cubic-bezier(.19, 1, .22, 1);
+    transition: all $transition-duration cubic-bezier(.19, 1, .22, 1);
   }
 
   .sub-menu {
@@ -127,7 +127,7 @@ $submenu-dropdown-toggle-hover: ('background': $color-white,
     border-right: 1px solid rgba(0, 0, 0, .05);
     border-bottom: 1px solid rgba(0, 0, 0, .05);
     box-shadow: 0 25px 20px -10px rgba(5, 4, 25, .05);
-    transition: opacity .25s cubic-bezier(.19, 1, .22, 1);
+    transition: opacity $transition-duration cubic-bezier(.19, 1, .22, 1);
 
     // Hide by default
     visibility: hidden;
@@ -238,7 +238,8 @@ $submenu-dropdown-toggle-hover: ('background': $color-white,
         &:before{
           display: block;
           content: attr(title);
-          font-weight: map-get($nav-links-highlight, 'font-weight');;
+          color: map-get($nav-links, 'hover-color');
+          font-weight: map-get($nav-links-highlight, 'font-weight');
           height: 0;
           overflow: hidden;
           visibility: hidden;

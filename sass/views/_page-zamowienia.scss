@@ -1,0 +1,11 @@
+.orders {
+  @media (min-width: $container-ipad) {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    column-gap: 40px;
+
+    .cta-button {
+      height: fit-content;
+    }
+  }
+}

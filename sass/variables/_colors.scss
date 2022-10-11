@@ -1,27 +1,22 @@
 // Base colors
 $color-white: #fff;
 $color-black: #202020;
-$color-black-text: #333333;
-$color-shadows: #EAEAEA;
-
-$color-darkgrey: #EAEAEA;
-$color-lightgrey: #FCFCFC;
+$color-black-text: #333;
+$color-shadows: #eaeaea;
+$color-darkgrey: #eaeaea;
+$color-lightgrey: #fcfcfc;
 
 // Required brand colors
-$color-main: #92AC26;
-$color-light:#BFD952;
+$color-main: #92ac26;
+$color-light:#bfd952;
 $color-dark: darken($color-main, 40%);
 $color-shade: #a3a3a3;
-
-
-// Official brand colors
-$color-bright: #81a9ff;
 
 // Element text and background colors
 $color-links: $color-black;
 $color-hover: $color-main;
 $color-paragraphs: $color-black-text;
-$color-headings:$color-black;
+$color-headings: $color-black;
 $color-blockquotes: #666;
 $color-blog-tags: #061629;
 $color-tags-and-search-items: #eaf1f8;

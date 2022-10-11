@@ -15,16 +15,16 @@
 
 // Start typography settings
 body {
-  font-size: var(--font-size-small);
-  font-family: $font-paragraphs;
   color: $color-paragraphs;
+  font-family: $font-paragraphs;
+  font-size: var(--font-size-small);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   font-weight: $font-weight-paragraphs;
+  text-rendering: geometricPrecision;
 
   // Font smoothing options
   text-size-adjust: none;
-  text-rendering: geometricPrecision;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
 // Links
@@ -40,20 +40,20 @@ a {
 // Special link styles for example in blog posts, use with @extend
 %textlink {
   position: relative;
-  overflow: visible;
-  font-weight: 700;
-  z-index: 1;
-  text-decoration: none;
-  transition: all .18s ease-in-out;
   display: inline-flex;
   color: $color-paragraphs;
+  font-weight: 700;
+  text-decoration: none;
   border-bottom: 1px solid $color-links;
   box-shadow: inset 0 -.1rem 0 $color-links;
+  transition: all $transition-duration ease-in-out;
+  overflow: visible;
+  z-index: 1;
 
   &:hover,
   &:focus {
-    box-shadow: inset 0 -100px 0 $color-links;
     color: $color-white;
+    box-shadow: inset 0 -100px 0 $color-links;
   }
 }
 
@@ -77,6 +77,7 @@ td,
 table,
 tr,
 %default {
+  font-family: $font-paragraphs;
   font-size: var(--font-size-small);
   line-height: $line-height-paragraphs;
 
@@ -92,11 +93,11 @@ h3,
 h4,
 h5,
 h6 {
+  margin-top: 2.7rem;
+  margin-bottom: 2.7rem;
   color: $color-headings;
   font-family: $font-headings;
   font-weight: $font-weight-semi-bold;
-  margin-top: 2.7rem;
-  margin-bottom: 2.7rem;
 }
 
 h2,
@@ -150,8 +151,8 @@ h6:first-child {
 
 // Lists
 ul {
-  list-style: disc outside;
   padding-left: 1.9rem;
+  list-style: disc outside;
 
   li {
     padding-left: 0;
@@ -176,8 +177,8 @@ i {
 
 // Inline small text.
 small {
-  line-height: 1;
   font-size: .87em;
+  line-height: 1;
 }
 
 // Default paragraphs
@@ -188,18 +189,18 @@ p {
 
 // Quotes.
 blockquote {
+  position: relative;
+  margin: 0;
+  padding-bottom: 3rem;
   clear: both;
   border: 0 none;
-  position: relative;
-  padding-bottom: 3rem;
-  margin: 0;
 
   p {
-    font-style: italic;
-    margin-bottom: 0;
     position: relative;
-    overflow: visible;
+    margin-bottom: 0;
     color: $color-blockquotes;
+    font-style: italic;
+    overflow: visible;
   }
 
   @media (min-width: $container-ipad) {
@@ -209,11 +210,11 @@ blockquote {
 
   &::before {
     content: '';
-    display: block;
-    height: 4px;
     position: absolute;
     left: 0;
     top: 0;
+    display: block;
+    height: 4px;
     max-width: 147px;
 
     @media (min-width: $container-mobile) {
@@ -239,19 +240,19 @@ p:last-child {
 
 // images
 img {
-  -ms-interpolation-mode: bicubic;
   height: auto;
-  vertical-align: middle;
   max-width: 100%;
+  vertical-align: middle;
+  interpolation-mode: bicubic;
 }
 
 // Figures and captions
 figure {
   position: relative;
-  margin-bottom: 1rem;
   margin-left: 0;
   margin-right: 0;
   margin-top: 0;
+  margin-bottom: 1rem;
 }
 
 // Figcaption.
@@ -263,15 +264,15 @@ figcaption {
 
 // Horizontal rule.
 hr {
-  background-image: linear-gradient(to bottom, rgba(#000, 0) 50%, #000 50%);
-  background-repeat: repeat-x;
-  background-size: 2px 2px;
-  background-position: 0 50%;
-  border: 0;
+  height: 0;
+  margin: 0;
   padding-top: 1rem;
   padding-bottom: 1rem;
-  margin: 0;
-  height: 0;
+  background-image: linear-gradient(to bottom, rgba(#000, 0) 50%, #000 50%);
+  background-position: 0 50%;
+  background-repeat: repeat-x;
+  background-size: 2px 2px;
+  border: 0;
 }
 
 kbd,
@@ -282,13 +283,13 @@ samp {
 
 // Code block.
 code {
-  color: $color-code-blocks;
-  background-color: $color-code-blocks-background;
-  font-family: $font-monospace;
-  line-height: 1;
   padding: .37rem .5rem;
-  border-radius: .3rem;
+  color: $color-code-blocks;
+  font-family: $font-monospace;
   font-size: inherit; // normalize.css sets this as 1em by default
+  line-height: 1;
+  background-color: $color-code-blocks-background;
+  border-radius: .3rem;
 
   pre & {
     display: inline-block;
@@ -298,10 +299,10 @@ code {
 
 // Preformatted text.
 pre {
-  border-radius: .3rem;
   display: block;
-  white-space: pre-wrap;
-  word-break: break-all;
-  word-wrap: break-word;
   margin-bottom: 2rem;
+  word-wrap: break-word;
+  word-break: break-all;
+  white-space: pre-wrap;
+  border-radius: .3rem;
 }

@@ -16,7 +16,7 @@ get_header();
 		<?php if (have_posts()) : ?>
 			<ul class="remove-ul-styling s-one-col m-two-cols l-three-col">
 				<?php while (have_posts()) : the_post();
-					get_template_part('components/product-thumbnail/index');
+					get_template_part('template-parts/components/product-thumbnail');
 				endwhile;
 				the_posts_navigation();
 			else :

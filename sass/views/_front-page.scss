@@ -6,24 +6,23 @@
 // the body.
 // ------------------------------------------------
 
-.cta-section{
-    padding-top: calc(var(--padding-container-vertical)/2);
-    padding-bottom: calc(var(--padding-container-vertical)/2);
-    .cta-button:not(:last-child){
-        margin-bottom:50px;
-    }
+.cta-section {
+  padding-top: calc(var(--padding-container-vertical));
+  padding-bottom: 0;
+
+  .cta-button:not(:last-child) {
+    margin-bottom: 50px;
+  }
 }
 
-@media (min-width: $responsivenav){
-    
-    .cta-section{
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        column-gap: 50px;
+@media (min-width: $responsivenav) {
+  .cta-section {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 50px;
 
-       .cta-button:not(:last-child){
-        margin-bottom:0;
+    .cta-button:not(:last-child) {
+      margin-bottom: 0;
     }
-    }
+  }
 }
-    

@@ -1,0 +1,35 @@
+.cta-button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 40px;
+  text-align: center;
+  background-color: $color-white;
+  border: 2px solid $color-light;
+  border-radius: $border-radius;
+  cursor: pointer;
+
+  &__title {
+    @extend %h3;
+    margin: 2.7rem 0 0 0;
+    color: $color-black;
+    font-weight: $font-weight-medium;
+  }
+
+  &__figure {
+    height: 100px;
+
+    img {
+      width: auto;
+      height: 100%;
+      object-fit: contain;
+    }
+  }
+}
+
+.cta-button:hover {
+  box-shadow: 0 0 10px 3px rgba(0, 0, 0, .14);
+  transition: $transition-duration linear box-shadow;
+  transition-delay: 0s !important;
+}

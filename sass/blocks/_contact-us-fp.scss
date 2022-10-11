@@ -1,0 +1,168 @@
+.section-contact {
+  &__hero {
+    //padding-bottom: var(--padding-container-vertical);
+    position: relative;
+    padding-top: var(--padding-container-vertical);
+
+    .sec-heading {
+      position: relative;
+      color: $color-white;
+      text-align: center;
+      z-index: 2;
+    }
+
+    .image-wrapper {
+      position: static;
+      margin: 0;
+
+      .overlay,
+      img {
+        width: 100%;
+        height: 300px;
+        min-height: 300px;
+      }
+
+      .overlay {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, .2);
+        z-index: 1;
+        mix-blend-mode: normal;
+      }
+
+      img {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        object-fit: cover;
+        z-index: -1;
+      }
+    }
+  }
+
+  &__content {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr;
+
+    align-items: center;
+    z-index: 2;
+    row-gap: 20px;
+  }
+
+  &__contact-info,
+  &__form {
+    padding: 45px 25px;
+    background-color: $color-white;
+    border: 2px solid $color-light;
+    border-radius: $border-radius;
+  }
+
+  &__contact-info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__contact-info-wrapper {
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: center;
+    row-gap: 30px;
+
+    .divider {
+      width: 30%;
+      height: 1px;
+      margin: 0 auto;
+      background-color: $color-shadows;
+      border-radius: $border-radius;
+    }
+
+    .phones,
+    .emails {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 0 auto;
+      text-align: center;
+
+      &-figure {
+
+        width: 70px;
+        height: 40px;
+        margin-bottom: 20px;
+
+        img {
+          width: auto;
+          height: 100%;
+        }
+      }
+    }
+
+    .phones {
+      .phone-list:nth-of-type(1) {
+        margin-bottom: 20px;
+      }
+
+      .phone-item-type {
+        margin-bottom: 1rem;
+        font-weight: $font-weight-medium;
+      }
+    }
+  }
+
+  &__form {
+    p {
+      margin-bottom: 0;
+    }
+  }
+
+  @media (min-width: $container-ipad) {
+    &__contact-info-wrapper {
+      grid-template-columns: 1fr 25px 1fr;
+      column-gap: 20px;
+
+      .phones,
+      .emails {
+        align-items: center;
+        margin: auto;
+      }
+
+      .divider {
+        width: 1px;
+        height: 100%;
+      }
+    }
+  }
+
+  @media (min-width: $responsivenav) {
+    &__content {
+      display: flex;
+      align-items: stretch;
+    }
+
+    &__contact-info,
+    &__form {
+      padding: 45px;
+    }
+
+    &__contact-info {
+      margin-right: 50px;
+    }
+
+    &__contact-info-wrapper {
+      grid-template-columns: 1fr;
+
+      .divider {
+        width: 30%;
+        height: 1px;
+        margin: 0 auto;
+      }
+    }
+  }
+}

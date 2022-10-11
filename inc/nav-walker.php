@@ -68,9 +68,11 @@ class Nav_Walker extends Walker_Nav_Menu
 				$class_names .= ' dropdown';
 			}
 
-			if (in_array('current-menu-item', $classes, true)) {
-				$class_names .= ' active';
-			}
+      if (!is_front_page()):
+        if (in_array('current-menu-item', $classes, true)) {
+          $class_names .= ' active';
+        }
+      endif;
 
 			$class_names = $class_names ? ' class="' . esc_attr($class_names) . '"' : '';
 
@@ -94,12 +96,11 @@ class Nav_Walker extends Walker_Nav_Menu
 					$atts['href'] = !empty($item->url) ? substr($item->url, strpos($item->url, "#") ) : ''; //? $item->url : '';//
 					
 					if(strpos($atts['href'], '#') !== false):
-						$atts['class'] = "js-trigger";
+						$atts['class'] = "smooth-scroll";
 					endif;
 					
 				else:
 					$atts['href'] = !empty($item->url) ? $item->url : '';
-					//$atts['class'] = "js-trigger";
 				endif;
 			}
 

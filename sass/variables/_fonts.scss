@@ -5,36 +5,10 @@
 @include fontFace('Poppins', '../fonts/Poppins-Bold', 700);
 @include fontFace('Pacifico', '../fonts/Pacifico-Regular', 400);
 
-
 // Font family settings
-$font-paragraphs: 'Poppins',
--apple-system,
-'BlinkMacSystemFont',
-'Segoe UI',
-'Roboto',
-'Oxygen-Sans',
-'Ubuntu',
-'Cantarell',
-'Helvetica Neue',
-sans-serif;
-$font-headings: 'Poppins',
--apple-system,
-'BlinkMacSystemFont',
-'Segoe UI',
-'Roboto',
-'Oxygen-Sans',
-'Ubuntu',
-'Cantarell',
-'Helvetica Neue',
-sans-serif;
-$font-monospace: 'Inconsolata',
-'Menlo',
-'Monaco',
-'Consolas',
-'Andale Mono',
-'Bitstream Vera Sans Mono',
-'Courier New',
-monospace;
+$font-paragraphs: 'Poppins', sans-serif;
+$font-headings: 'Poppins', sans-serif;
+$font-monospace: 'Inconsolata', monospace;
 
 // Font size settings
 $font-size-tiny: 14px;

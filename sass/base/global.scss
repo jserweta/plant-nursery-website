@@ -6,10 +6,6 @@
 // Helpers
 @import '../helpers/animations';
 @import '../helpers/typography';
-@import '../helpers/general';
-@import '../helpers/aspect-ratio';
-@import '../helpers/background';
-@import '../helpers/grid';
 
 // Variables
 @import '../variables/colors';
@@ -23,10 +19,6 @@
 
 // Plugins
 @import '../plugins/contact-form-7';
-
-// Style components
-@import '../components/box-with-shadow';
-@import '../components/buttons';
 
 // Accessibility
 @import 'accessibility';
@@ -45,25 +37,37 @@
 @import '../layout/wordpress';
 
 // Global features
-@import '../features/top';
+@import '../features/back-to-top';
 @import '../features/gallery';
 @import '../features/pagination';
 @import '../features/sticky-nav';
+@import '../features/buttons';
+
+// Modules
+@import '../modules/simple-lightbox';
 @import "../../node_modules/magnific-popup/dist/magnific-popup";
+@import "../features/magnific-popup";
+
 // Views
 @import '../views/front-page';
 @import '../views/page-o-nas';
 @import '../views/page-oferta';
 @import '../views/page-galeria';
 @import '../views/page-kategoria-galerii';
-@import '../views/search';
+@import '../views/page-zamowienia';
 @import '../views/404';
 @import '../views/comments';
 @import '../views/single-product';
 
-// Modules
-// @import '../modules/some-module';
-@import '../modules/simple-lightbox';
-
 // Components
-@import '../../components/style.scss';
+@import "../components/social-media";
+@import "../components/cta-button";
+@import "../components/product-thumbnail";
+
+// Blocks
+// @import "../blocks/hero-fp";
+@import "../blocks/hero-fp-2";
+@import "../blocks/about-us-fp";
+@import "../blocks/sales-point-fp";
+@import "../blocks/gallery-fp";
+@import "../blocks/contact-us-fp";

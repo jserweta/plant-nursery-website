@@ -9,166 +9,120 @@
 body {
   background: $color-body;
 }
-.entry-header{
-  .page-title-heading{
+
+html {
+  scroll-behavior: smooth;
+}
+
+.entry-header {
+  .page-title-heading {
     margin-bottom: var(--padding-container-vertical);
   }
 }
 
-.sec-heading{
+.sec-heading {
   color: $color-main;
   font-weight: $font-weight-medium;
 }
 
-.page-title-heading{
+.page-title-heading {
+  margin-bottom: 0;
   font-weight: $font-weight-medium;
   text-align: center;
-  margin-bottom: 0;
-}
-.page-title-heading::after{
-    content: "";
-    display: block;
-    border-top: 4px solid $color-main;
-    border-bottom: 4px solid $color-main;
-    background-color: $color-main;
-    width: 80px;
-    border-radius: $border-radius;
-    margin: 0 auto;
-    margin-top: 10px;
 }
 
-.title-latin{
-  color:$color-main;
-  font-family: 'Pacifico';
+.page-title-heading::after {
+  content: "";
+  display: block;
+  width: 80px;
+  margin: 0 auto;
+  margin-top: 10px;
+  background-color: $color-main;
+  border-top: 4px solid $color-main;
+  border-bottom: 4px solid $color-main;
+  border-radius: $border-radius;
+}
+
+.title-latin {
   margin: 0;
+  color: $color-main;
+  font-family: 'Pacifico';
   font-weight: $font-weight-paragraphs;
 }
 
-.image-radius{
+.image-radius {
   border-radius: $border-radius;
 }
- 
+
 .remove-ul-styling {
-  list-style-type: none;
   margin: 0;
   padding: 0;
-}
-
-.s-one-col {
-  @include grid(1);
-}
-
-.m-two-col {
-  @media (min-width: $container-ipad) {
-    @include grid(2);
-  }
-}
-
-.l-two-col {
-  @media (min-width: $container-ipad-landscape) {
-    @include grid(2);
-  }
-}
-
-.l-three-col {
-  @media (min-width: $container-ipad-landscape) {
-    @include grid(3);
-  }
+  list-style-type: none;
 }
 
 // Site wrapper
 .site {
+  position: relative;
   max-width: 100%;
   margin-left: auto;
   margin-right: auto;
-  position: relative;
   overflow: hidden;
 }
 
 // Containers
 .container {
-  margin: 0 auto;
-  padding-top: var(--padding-container-vertical);
-  padding-bottom: var(--padding-container-vertical);
-  padding-left: var(--padding-container-horizontal);
-  padding-right: var(--padding-container-horizontal);
   max-width: $grid-base-size;
+  margin: 0 auto;
   margin-left: auto;
   margin-right: auto;
+  padding-left: var(--padding-container-horizontal);
+  padding-right: var(--padding-container-horizontal);
+  padding-top: var(--padding-container-vertical);
+  padding-bottom: var(--padding-container-vertical);
 }
 
 // Clear block containers by default
 .site-main .container {
-  overflow: hidden;
   clear: both;
+  overflow: hidden;
 }
 
 // Meta actions
 .entry-footer {
-  overflow: hidden;
-  clear: both;
   display: flex;
   justify-content: space-between;
+  clear: both;
+  overflow: hidden;
 }
 
 // Better edit link
 .edit-link {
-  text-align: left;
-  width: 100%;
   display: block;
-  clear: both;
+  width: 100%;
   max-width: 100%;
   min-width: 0;
-  margin-bottom: 0;
   margin-top: 2rem;
-  overflow: hidden;
+  margin-bottom: 0;
+  clear: both;
+  text-align: left;
   transition: all $transition-duration;
+  overflow: hidden;
 
   a {
-    clear: both;
-    text-align: center;
-    transition: all $transition-duration;
     display: block;
-    padding: 2rem;
-    background: $color-background-edit-link;
-    color: $color-edit-link;
-    border: 2px dashed $color-edit-link;
     margin: 0;
+    padding: 2rem;
+    clear: both;
+    color: $color-edit-link;
+    text-align: center;
     text-decoration: none;
+    background: $color-background-edit-link;
+    border: 2px dashed $color-edit-link;
+    transition: all $transition-duration;
   }
 
   a:hover {
     color: $color-edit-link;
     background: #efefef;
   }
-}
-
-// Hide/show helpers
-.hide-on-desktop {
-  @media (min-width: $container-mobile) {
-    display: none !important;
-  }
-}
-
-.hide-on-mobile {
-  @media (max-width: $container-mobile) {
-    display: none !important;
-  }
-}
-
-// Only function of these is to force hide content based on the view
-.hide-on-mobile-nav-view {
-  @media (max-width: $responsivenav) {
-    display: none !important;
-  }
-}
-
-.hide-on-desktop-nav-view {
-  @media (min-width: $responsivenav) {
-    display: none !important;
-  }
-}
-
-.hide-completely {
-  display: none !important;
 }
