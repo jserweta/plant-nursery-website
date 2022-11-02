@@ -227,22 +227,16 @@ $submenu-dropdown-toggle-hover: ('background': $color-white,
         }
 
         // Actions in menu items
-        &:hover,
         &:focus,
         &:active,
+        &:hover{
+          color: map-get($nav-links, 'hover-color');
+        }
+
         &.highlighted,
         &.current {
           color: map-get($nav-links, 'hover-color');
           font-weight: map-get($nav-links-highlight, 'font-weight');
-        }
-        &:before{
-          display: block;
-          content: attr(title);
-          color: map-get($nav-links, 'hover-color');
-          font-weight: map-get($nav-links-highlight, 'font-weight');
-          height: 0;
-          overflow: hidden;
-          visibility: hidden;
         }
       }
 
