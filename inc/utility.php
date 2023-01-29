@@ -1,4 +1,3 @@
-
 <?php
 /**
  * Utility functions
