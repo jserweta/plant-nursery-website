@@ -4,18 +4,18 @@
   let lastScrollTop = 0;
   const delta = 0;
   const collapsePoint = 157; // In what pixel height from top the navigation will be sticky
-  const hidePoint = 157;//700; // In what pixel height from top the navigation will collapse
+  const hidePoint = 157; // 700; // In what pixel height from top the navigation will collapse
 
   $(window).scroll(() => {
     didScroll = true;
     const scroll = $(window).scrollTop();
 
     if (scroll >= collapsePoint) {
-      $('.nav-container, .site-content').addClass('nav-container-sticky');
-      //$('.site-branding .logo').addClass('logo-sticky');
+      $(".nav-container, .site-content").addClass("nav-container-sticky");
+      // $('.site-branding .logo').addClass('logo-sticky');
     } else {
-      $('.nav-container, .site-content').removeClass('nav-container-sticky');
-      //$('.site-branding .logo').removeClass('logo-sticky');
+      $(".nav-container, .site-content").removeClass("nav-container-sticky");
+      // $('.site-branding .logo').removeClass('logo-sticky');
     }
   });
 
@@ -29,12 +29,16 @@
     // This is necessary so you never see what is "behind" the navbar.
     if (st > lastScrollTop && st > hidePoint) {
       // Scroll Down
-      $('.nav-container').removeClass('scrolling-up').addClass('scrolling-down');
+      $(".nav-container")
+        .removeClass("scrolling-up")
+        .addClass("scrolling-down");
     } else {
       // Scroll Up
       // eslint-disable-next-line no-lonely-if
       if (st + $(window).height() < $(document).height()) {
-        $('.nav-container').removeClass('scrolling-down').addClass('scrolling-up');
+        $(".nav-container")
+          .removeClass("scrolling-down")
+          .addClass("scrolling-up");
       }
     }
 
@@ -47,4 +51,4 @@
       didScroll = false;
     }
   }, 250);
-}(jQuery));
+})(jQuery);

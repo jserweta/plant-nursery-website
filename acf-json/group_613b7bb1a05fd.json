@@ -6,6 +6,7 @@
             "key": "field_613b7b8c97643",
             "label": "Group description",
             "name": "group_description",
+            "aria-label": "",
             "type": "wysiwyg",
             "instructions": "",
             "required": 0,
@@ -25,6 +26,7 @@
             "key": "field_613b7b8c97644",
             "label": "Images",
             "name": "images",
+            "aria-label": "",
             "type": "gallery",
             "instructions": "",
             "required": 0,
@@ -66,5 +68,6 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1650653064
+    "show_in_rest": false,
+    "modified": 1675006312
 }

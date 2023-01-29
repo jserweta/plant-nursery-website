@@ -6,6 +6,7 @@
             "key": "field_61276d1abc2b3",
             "label": "Offer",
             "name": "offer",
+            "aria-label": "",
             "type": "group",
             "instructions": "",
             "required": 0,
@@ -21,6 +22,7 @@
                     "key": "field_61275ffa47311",
                     "label": "Description",
                     "name": "description",
+                    "aria-label": "",
                     "type": "wysiwyg",
                     "instructions": "",
                     "required": 0,
@@ -40,6 +42,7 @@
                     "key": "field_612760f847312",
                     "label": "Button",
                     "name": "button",
+                    "aria-label": "",
                     "type": "group",
                     "instructions": "",
                     "required": 0,
@@ -55,6 +58,7 @@
                             "key": "field_613f47b9f752c",
                             "label": "Button type",
                             "name": "button_type",
+                            "aria-label": "",
                             "type": "radio",
                             "instructions": "",
                             "required": 1,
@@ -79,6 +83,7 @@
                             "key": "field_6127611e47314",
                             "label": "Button link",
                             "name": "button_link",
+                            "aria-label": "",
                             "type": "link",
                             "instructions": "",
                             "required": 0,
@@ -102,7 +107,8 @@
                             "key": "field_6127610847313",
                             "label": "Button icon",
                             "name": "button_icon",
-                            "type": "textarea",
+                            "aria-label": "",
+                            "type": "image",
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": [
@@ -119,11 +125,16 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "default_value": "",
-                            "placeholder": "",
-                            "maxlength": "",
-                            "rows": "",
-                            "new_lines": ""
+                            "return_format": "id",
+                            "library": "all",
+                            "min_width": "",
+                            "min_height": "",
+                            "min_size": "",
+                            "max_width": "",
+                            "max_height": "",
+                            "max_size": "",
+                            "mime_types": "",
+                            "preview_size": "medium"
                         }
                     ]
                 }
@@ -147,5 +158,6 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1650653091
+    "show_in_rest": 0,
+    "modified": 1675007108
 }
