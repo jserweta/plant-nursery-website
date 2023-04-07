@@ -1,9 +1,9 @@
 <?php
-$sec_contact = get_field('section_contact');
-$phones = get_field('phones', 'option');
-$phones_icon = get_field('phones_icon', 'option');
-$emails = get_field('e-mails', 'option');
-$email_icon = get_field('email_icon', 'option');
+$sec_contact  = get_field('section_contact');
+$phones       = get_field('phones', 'option');
+$phones_icon  = get_field('phones_icon', 'option');
+$emails       = get_field('e-mails', 'option');
+$email_icon   = get_field('email_icon', 'option');
 
 if (!empty($sec_contact) && isset($sec_contact)) :
   $sec_heading = $sec_contact['section_title'];

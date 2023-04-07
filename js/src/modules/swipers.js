@@ -3,16 +3,17 @@ import Swiper, {
   Pagination,
   Autoplay,
   EffectFade,
+  Keyboard
 } from 'swiper';
 
-Swiper.use([Navigation, Pagination, Autoplay, EffectFade]);
+Swiper.use([Navigation, Pagination, Autoplay, EffectFade, Keyboard]);
 
 const heroSwiper = new Swiper('.fp-hero-slider', {
   loop: true,
   slidesPerView: 1,
   centeredSlides: true,
   // effect: 'fade',
-
+  keyboard: true,
   autoplay: {
     delay: 5000,
     disableOnInteraction: true,
@@ -31,6 +32,7 @@ const productSwiper = new Swiper('.swiper-container.product__hero-swiper', {
   direction: 'vertical',
   centeredSlides: true,
   effect: 'fade',
+  keyboard: true,
 
   autoplay: {
     delay: 3000,

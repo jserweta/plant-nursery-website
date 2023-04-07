@@ -25,7 +25,7 @@ if (!empty($hero) && isset($hero)):
               <div class="container">
                 <div class="swiper-content">
                   <div class="swiper-content__info">
-                    <?php if ($index == 0):
+                    <?php if (!$hero_heading && !$hero_desc):
                       if (!empty($hours) && isset($hours)) : 
                         $monday_friday = $hours['pon-pt'];
                         $saturday = $hours['sob'];
