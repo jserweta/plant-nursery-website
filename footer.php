@@ -40,8 +40,9 @@ $logo_secondary = get_field('logo_secondary', 'option');
 		</div>
 
     <div class="site-footer__theme-info">
-      <span>
-        <?php echo esc_html('Mikulscy © 2021 •'); ?>
+    <div>
+    <span>
+        <?php echo esc_html('Szkółka Mikulscy © 2023 •'); ?>
       </span>
       <span>
         <?php esc_html_e(' Projekt i wykonanie ', 'JSerweta'); ?>
@@ -49,12 +50,15 @@ $logo_secondary = get_field('logo_secondary', 'option');
         <?php echo esc_html('JSerweta'); ?>
       </a>
       </span>
-      <span>
-        <?php esc_html_e(' •  Ta strona używa Cookies, przeglądanie jej to zgoda na ich używanie • ', 'imenet'); ?>
+    </div>
+    <div>
+    <span>
+        <?php esc_html_e('Ta strona używa Cookies • ', 'imenet'); ?>
       </span>
       <a href="<?php echo esc_url('/polityka-prywatnosci') ?>" class="no-external-link-indicator">
         <?php esc_html_e('Polityka Prywatności'); ?>
       </a>
+    </div>
     </div>
 	</div>
 
