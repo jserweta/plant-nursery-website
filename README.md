@@ -1,5 +1,5 @@
 # Plant nursery WordPress theme
-Check out demo page [**HERE**](http://kiwwwi.imenet.pl/)
+Check out live page [**HERE**](https://mikulscy.eu/)
 ## Screenshots
 ### Home page
 
