@@ -137,6 +137,26 @@
                             "preview_size": "medium"
                         }
                     ]
+                },
+                {
+                    "key": "field_64651cbc2ef5b",
+                    "label": "Komunikat o braku produktów",
+                    "name": "empty_products_info",
+                    "aria-label": "",
+                    "type": "wysiwyg",
+                    "instructions": "Wypełnij pole jeśli chcesz wyświetlić komunikat, w przeciwnym wypadku pozostaw pole puste!",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "tabs": "all",
+                    "toolbar": "full",
+                    "media_upload": 1,
+                    "delay": 0
                 }
             ]
         }
@@ -159,5 +179,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1675007108
+    "modified": 1684348381
 }

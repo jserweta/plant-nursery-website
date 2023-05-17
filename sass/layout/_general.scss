@@ -79,6 +79,10 @@ html {
   padding-right: var(--padding-container-horizontal);
   padding-top: var(--padding-container-vertical);
   padding-bottom: var(--padding-container-vertical);
+
+  &:has(.page-title-heading) {
+    padding-bottom: 0;
+  }
 }
 
 // Clear block containers by default

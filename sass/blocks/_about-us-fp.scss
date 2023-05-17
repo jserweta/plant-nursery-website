@@ -46,7 +46,7 @@
 
     &__image {
       img {
-        max-height: 700px;
+        max-height: unset;
         border-top-right-radius: 0;
         border-bottom-left-radius: $border-radius;
         border-top-left-radius: $border-radius;

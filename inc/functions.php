@@ -32,3 +32,25 @@ function custom_mime_types($mimes)
 }
 
 add_action('upload_mimes', 'custom_mime_types');
+
+function custom_tiny_mce_colors($init) {
+  $default_colours = '"000000", "Black",
+                      "FF6600", "Orange",
+                      "008000", "Green",
+                      "808080", "Gray",
+                      "FF0000", "Red",
+                      "FFFFFF", "White"';
+
+  $custom_colours =  '"92ac26", "Main green",
+                      "bfd952", "Light green",
+                      "333", "Text"';
+
+  // build colour grid default+custom colors
+  $init['textcolor_map'] = '['.$default_colours.','.$custom_colours.']';
+
+  // enable 6th row for custom colours in grid
+  $init['textcolor_rows'] = 6;
+
+  return $init;
+}
+add_filter('tiny_mce_before_init', 'custom_tiny_mce_colors');

@@ -41,9 +41,11 @@ get_header(); ?>
               <?php echo $desc; ?>
             </div>
 
-            <div class="about-us-row__image <?php echo $class; ?> <?php echo $my_index != 1 ? "slide-left": ""; ?>" data-delay="<?php echo $my_index === 1 ? "100" : ''; ?>">
-              <?php echo wp_get_attachment_image($image['id'], 'large', false, ["class" => "image-radius"]); ?>
-            </div>
+            <?php if ($image) : ?>
+              <div class="about-us-row__image <?php echo $class; ?> <?php echo $my_index != 1 ? "slide-left": ""; ?>" data-delay="<?php echo $my_index === 1 ? "100" : ''; ?>">
+                <?php echo wp_get_attachment_image($image['id'], 'large', false, ["class" => "image-radius"]); ?>
+              </div>
+            <?php endif; ?>
           </section>
         <?php endforeach;
       endif; ?>
